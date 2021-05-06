@@ -8,6 +8,6 @@ Completed:
 
 WIP: unit testing
 
-This project manages the users and their phone books.
-Controllers: User, PhoneBook.
+This project manages the users and their phone books.<br/>
+Controllers: User, PhoneBook.<br/>
 No database is implemented.
