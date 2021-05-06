@@ -1,5 +1,7 @@
 # SpringBootDemo
 
+Spring Boot REST API app.
+
 This project is a work in progress (active).
 
 WIP:
