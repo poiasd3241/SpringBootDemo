@@ -5,10 +5,16 @@ import com.poiasd.restphonebooks.dto.model.UserDTO;
 import com.poiasd.restphonebooks.model.User;
 import com.poiasd.restphonebooks.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The default implementation of the {@link UserService}.
+ * The {@link UserRepository} is used as a subordinate link in the {@link UserDTO} persistence.
+ */
+@Service
 public class DefaultUserService implements UserService {
 
     @Autowired
@@ -21,8 +27,8 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public Optional<List<UserDTO>> findByName(String name, boolean isFirstName) {
-        Optional<List<User>> users = userRepository.findByName(name, isFirstName);
+    public Optional<List<UserDTO>> findByName(String name, boolean isFullName) {
+        Optional<List<User>> users = userRepository.findByName(name, isFullName);
         return users.map(UserMapper::toDtoList);
     }
 

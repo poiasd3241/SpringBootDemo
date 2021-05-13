@@ -6,13 +6,16 @@ import com.poiasd.restphonebooks.model.Contact;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Provides the functionality to map data between the {@link Contact} domain models and the {@link ContactDTO} DTOs.
+ */
 public class ContactMapper {
     public static ContactDTO toDTO(Contact contact) {
-        return new ContactDTO(contact.name(), contact.phoneNumber());
+        return new ContactDTO(contact.getName(), contact.getPhoneNumber());
     }
 
     public static Contact fromDTO(ContactDTO contactDTO) {
-        return new Contact(contactDTO.name(), contactDTO.phoneNumber());
+        return new Contact(contactDTO.getName(), contactDTO.getPhoneNumber());
     }
 
     public static List<ContactDTO> toDtoList(List<Contact> contacts) {

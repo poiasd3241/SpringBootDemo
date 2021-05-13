@@ -5,18 +5,24 @@ import com.poiasd.restphonebooks.dto.model.ContactDTO;
 import com.poiasd.restphonebooks.model.Contact;
 import com.poiasd.restphonebooks.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The default implementation of the {@link ContactService}.
+ * The {@link ContactRepository} is used as a subordinate link in the {@link ContactDTO} persistence.
+ */
+@Service
 public class DefaultContactService implements ContactService {
 
     @Autowired
     private ContactRepository contactRepository;
 
     @Override
-    public Optional<List<ContactDTO>> findAllByUserUID(String userUID) {
-        Optional<List<Contact>> contacts = contactRepository.findAllByUserUID(userUID);
+    public Optional<List<ContactDTO>> findByUserUID(String userUID) {
+        Optional<List<Contact>> contacts = contactRepository.findByUserUID(userUID);
         return contacts.map(ContactMapper::toDtoList);
     }
 
