@@ -2,16 +2,12 @@
 
 Spring Boot REST API app.
 
-This project is a work in progress (active).
-
-WIP:
-- Unit testing (JUnit)
+Features:
+- Clean architecture: repository, service, DTO
+- Unit testing (JUnit, Mockito, Spring)
+- Global controller exception handling
 - Documentation (JavaDoc)
 
-Completed:
-- Clean architecture (repository, service, DTO)
-- Exception handling
-
-This project manages users and their phone books.<br/>
-Controllers: User, PhoneBook.<br/>
-No database is implemented.
+This app manages users and their phone books.<br/>
+Controllers: User, Contact.<br/>
+No real database is implemented.
